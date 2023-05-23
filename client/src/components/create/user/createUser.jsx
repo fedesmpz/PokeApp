@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import validate from '../../validate/validate';
+import styles from './createUser.module.css'
 
 const CreateUser = () => {
   const navigate = useNavigate();
@@ -52,9 +53,10 @@ const CreateUser = () => {
 
   return (
     <div>
-      <h1>Crear Nuevo Usuario</h1>
-      <form>
-        <label htmlFor="firstName">
+      <div className={styles.container}>
+  <h1>Crear Nuevo Usuario</h1>
+  <form>
+  <label htmlFor="firstName">
           Primer Nombre
           <input type="text" name="name" value={form.name} onChange={handleChange} />
         </label>
@@ -72,11 +74,12 @@ const CreateUser = () => {
           <input type="password" name="password" value={form.password} onChange={handleChange} />
         </label>
         {error.password && <span>{error.password}</span>}
-        <button type="submit" onClick={handleSubmit}>Create User</button>
-      </form>
-      <button onClick={handleGoBack}>Atras</button>
+        <button type="submit" onClick={handleSubmit}>Crear Usuario</button>
+  </form>
+  <button onClick={handleGoBack}>Atras</button>
+  {success && <span>{success}</span>}
+</div>
 
-      {success && <span>{success}</span>}
     </div>
   );
 };

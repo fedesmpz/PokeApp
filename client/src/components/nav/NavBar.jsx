@@ -9,13 +9,14 @@ import {
 } from '../../redux/actions';
 import { useNavigate } from 'react-router-dom'
 import PokemonForm from '../create/pokemon/PokemonForm';
+import styles from './NavBar.module.css'
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
 
   const pokemonData = useSelector((state) => state.pokemonData);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [showForm, setShowForm] = useState(false);
 
 
   const handleTypeFilterChange = async (event) => {  //funcional
@@ -38,14 +39,6 @@ const NavBar = () => {
     dispatch(logout());
   };
 
-  const handleShowForm = () => {
-    setShowForm(true);
-  };
-
-  const handleCloseForm = () => {
-    setShowForm(false);
-  };
-
   const types = [
     'normal', 'fighting', 'flying', 'poison', 'ground', 'rock', 'bug', 'ghost',
     'steel', 'water', 'grass', 'electric', 'psychic', 'ice', 'dragon', 'dark',
@@ -53,38 +46,63 @@ const NavBar = () => {
   ];
 
 
+
+
   return (
-    <div>
-              {showForm ? (
-        <PokemonForm handleClose={handleCloseForm}/>
-      ) : (
-        <>
-      <select onChange={handleTypeFilterChange}>
-        <option value="all">Todos los Tipos</option>
-          {types.map((type) => (
-          <option key={type} value={type}>
-          {type.charAt(0).toUpperCase() + type.slice(1)}
-        </option>
-        ))}
-      </select>
+      <div>
+          <div className={styles.header}>
+              <div className={styles.title}></div>
+              <div className={styles.buttonContainer}>
+                <Link to="/create">
+                  <button className={styles.createBtn}><p className={styles.texto}>Crear Pokemon</p></button>
+                </Link>
+                <Link to="/about">
+                  <button className={styles.otherBtn}><p className={styles.otherBtnText}>About</p></button>
+                </Link>
+                <button className={styles.otherBtn} onClick={handleLogout}><p className={styles.otherBtnText}>Cerrar Sesión</p></button>
+              </div>
+          </div>
 
-      <select onChange={handleSortOrderChange}>
-        <option value="nameAsc">Nombre (Ascendente)</option>
-        <option value="nameDesc">Nombre (Descendente)</option>
-        <option value="attackAsc">Ataque (Ascendente)</option>
-        <option value="attackDesc">Ataque (Descendente)</option>
-      </select>
+          <div className={styles.searchBarContainer}>
+              <div className={styles.searchContainer}>
+                <div className={styles.searchText}>
+                  <p>Buscar</p>
+                </div>
+                <form onSubmit={handleSearch} className={styles.searchInput}>
+                  <input type="text" name="search" className={styles.dataInput}/>
+                  <button className={styles.searchBtn} type="submit">🔎</button>
+                </form>
+              </div>
+              <div className={styles.container}>
+              <div className={styles.searchContainer}>
+                <div>
+                    <p className={styles.searchText}>Ver</p>
+                </div>
+                <select className={styles.selectContainer} onChange={handleTypeFilterChange}>
+                <option value="all">Todos los Tipos</option>
+                {types.map((type) => (
+                  <option key={type} value={type}>
+                  {type.charAt(0).toUpperCase() + type.slice(1)}
+                  </option>
+                  ))}
+                </select>
+              </div>
+              
+              <div className={styles.searchContainer}>  
+              <div>
+                    <p className={styles.filterText}>Ordenar por</p>
+                </div> 
+                <select onChange={handleSortOrderChange} className={styles.selectContainer}>
+                  <option value="nameAsc">Nombre (Ascendente)</option>
+                  <option value="nameDesc">Nombre (Descendente)</option>
+                  <option value="attackAsc">Ataque (Ascendente)</option>
+                  <option value="attackDesc">Ataque (Descendente)</option>
+                </select>
+              </div>
+              </div>
+          </div>
 
-      <form onSubmit={handleSearch}>
-        <input type="text" name="search" />
-        <button type="submit">Buscar</button>
-      </form>
-
-      <button onClick={handleLogout}>Logout</button>
-      <button onClick={handleShowForm}>Agregar Pokémon</button>
-      </>
-      )}
-    </div>
+      </div>
   );
 };
 

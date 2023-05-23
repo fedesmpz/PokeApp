@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import styles from './PokemonForm.module.css'
+import { useNavigate } from 'react-router-dom';
 
-const PokemonForm = ( {handleClose} ) => {
+const PokemonForm = ( ) => {
   
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     image: '',
@@ -59,6 +62,10 @@ const PokemonForm = ( {handleClose} ) => {
       'fairy', 'unknown', 'shadow'
     ];
 
+    const handleClose = (event) => {
+      event.preventDefault();
+      navigate(-1);
+    } 
 
 
   return (

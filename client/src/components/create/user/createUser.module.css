@@ -1,0 +1,91 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px;
+    gap: 40px;
+    position: absolute;
+    width: 424px;
+    height: 560px;
+    left: calc(50% - 424px/2);
+    top: calc(50% - 560px/2);
+    background: #FFFFFF;
+    border-radius: 20px;
+  }
+  
+  .container > h1 {
+    width: 304px;
+    height: 40px;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 40px;
+    color: #1F1F1F;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 24px;
+    width: 360px;
+    height: 496px;
+  }
+  
+  form label {
+    width: 360px;
+    height: 16px;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 16px;
+    color: #A0A1A4;
+  }
+  
+  form input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 0px 0px 16px;
+    gap: 8px;
+    width: 360px;
+    height: 48px;
+    background: #FFFFFF;
+    border: 1px solid #C7C7C7;
+    border-radius: 12px;
+  }
+  
+  form input::placeholder {
+    width: 344px;
+    height: 24px;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 16px;
+    width: 360px;
+    height: 56px;
+    background: #E8500E;
+    border-radius: 8px;
+  }
+  
+  button span {
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+  }
+  

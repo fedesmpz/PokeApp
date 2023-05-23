@@ -30,7 +30,7 @@ const Home = () => {
       {access ? <NavBar /> : (
       <div className={styles.header}>
         <div className={styles.title}></div>
-        <button className={styles.loginBtn} onClick={handleGoBack}><p className={styles.texto}>Volver Atrás</p></button>
+        <button className={styles.loginBtn} onClick={handleGoBack}><p className={styles.texto}>Ir al inicio</p></button>
       </div>
     )}
       <div>

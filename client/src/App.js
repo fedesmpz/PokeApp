@@ -5,7 +5,7 @@ import About from './components/about/about';
 import Home from './components/home/Home';
 import Login from './components/login/Login';
 import CreateUser from './components/create/user/createUser'
-
+import PokemonForm from '../src/components/create/pokemon/PokemonForm';
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<CreateUser/>} />
         <Route path="/about" element={<About/>} />
+        <Route path="/create" element={<PokemonForm/>} />
       </Routes>
     </div>
   );

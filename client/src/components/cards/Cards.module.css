@@ -47,6 +47,7 @@
   }
   
   .pagination button {
+    margin: 2px;
     display: flex;
     flex-direction: row;
     justify-content: center;
