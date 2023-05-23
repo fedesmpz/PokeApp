@@ -1,0 +1,109 @@
+/* Header */
+
+  .image {
+    display: flex;
+    flex-direction: column;
+    position: relative; 
+    width: 100%;
+    height: 100vh; 
+    left: 0;
+    top: 0;
+    background: url(../../assets/fondo1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+  }
+  
+  
+  /* Card Container */
+  .cardContainer {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 1em;
+    overflow-y: auto; 
+    max-height: calc(100vh - 72px - 30px);
+  }
+  
+  /* Pagination */
+  .pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 4px;
+    position: sticky;
+    width: 100%;
+    bottom: 0;
+    background: none;
+  }
+
+  .paginationCenter{
+    padding: 2em;
+  }
+  
+  .pagination button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 8px;
+    gap: 10px;
+    height: 30px;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FFFFFF;
+    background: #F7A122;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    border-radius: 8px;
+  }
+
+  .pagination button:hover {
+    cursor: pointer;
+    background: #C20505;;
+    color: #FFFFFF;
+  }
+  
+  .pagination button.primary {
+    background: #E8500E;
+    width: 120px;
+  }
+  
+  .pagination button.primary-light {
+    background: #F7A122;
+    width: 120px;
+  }
+  
+  .pagination button.number {
+    width: 30px;
+  }
+  
+  .pagination .pageNumbers {
+    display: flex; 
+  }
+  
+  .pagination .pageNumbers button {
+    width: 30px; 
+  }
+  
+.pagination button.active {
+    background: #E8500E; 
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  

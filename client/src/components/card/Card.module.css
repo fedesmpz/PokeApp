@@ -1,0 +1,199 @@
+/* Card */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 16px;
+    position: relative;
+    width: 296px;
+    height: 430px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .image {
+    width: 248px;
+    height: 240px;
+    /* background: url(image.png); */
+    margin-top: -40px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 1;
+  }
+  
+  .name {
+    width: 240px;
+    height: 33px;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 33px;
+    color: #373737;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    text-transform: capitalize;
+  }
+  
+  
+  .typeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    width: 132px;
+    height: 54px;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+  }
+  
+  .typeTitle {
+    width: 132px;
+    height: 16px;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 16px;
+    color: #A0A1A4;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    text-align: left; 
+  }
+  
+  .types {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+  }
+  
+  .type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px;
+    width: 80px;
+    height: 30px;
+    background: #F7A122;
+    border-radius: 8px;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FFFFFF;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    text-transform: capitalize;
+  }
+  
+  .detailBtn {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 16px;
+    width: 248px;
+    height: 56px;
+    background: #FFFFFF;
+    border: 2px solid #E8500E;
+    border-radius: 8px;
+    flex: none;
+    order: 3;
+    align-self: stretch;
+    flex-grow: 0;
+    color: #E8500E;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .detailBtn:hover {
+    cursor: pointer;
+    background: #E8500E;
+    color: #FFFFFF;
+  }
+  
+  
+
+.normal{
+    background: #D3CFC8;
+}
+.fighting{
+    background: #A30A0A;
+}
+.flying{
+    background: #BCA2DC;
+}
+.poison{
+    background: #AF2AAA;
+}
+.ground{
+    background: #AA5C13;
+}
+.rock{
+    background: #C49439;
+}
+.bug{
+    background: #ABC609;
+}
+.ghost{
+    background: #8831CC;
+}
+.steel{
+    background: #878787;
+}
+.water{
+    background: #3389EE;
+}
+.fire{
+    background: #FF2E00;
+}
+.grass{
+    background: #41AC1B;
+}
+.electric{
+    background: #FFC700;
+}
+.psychic{
+    background: #FF56A7;
+}
+.ice{
+    background: #8FDDFE;
+}
+.dragon{
+    background: #681A8D;
+}
+.dark{
+    background: #4D4750;
+}
+.fairy{
+    background: #E685EE;
+}
+.unknown{
+    background: #878787;
+}
+.shadow{
+    background: #5C5353;
+}
