@@ -18,6 +18,7 @@ const Home = () => {
       dispatch(getPokemonData());
     }
   }, []);
+  
 
   const handleGoBack = (event) => {
     event.preventDefault();

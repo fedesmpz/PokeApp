@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from '../card/Card';
 import Detail from '../detail/Detail';
 import styles from './Cards.module.css'
+import { useSelector } from 'react-redux';
+import {
+  setSearchValue
+} from '../../redux/actions';
 
 const Cards = ({ data }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 12;
   const [selectedPokemon, setSelectedPokemon] = useState(null);
+  const searchName = useSelector((state) => state.searchName);
 
   // Calcular el índice inicial y final de las tarjetas para la página actual
   const indexOfLastCard = currentPage * cardsPerPage;
@@ -15,6 +20,12 @@ const Cards = ({ data }) => {
 
   // Calcular el número total de páginas
   const totalPages = Math.ceil(data.length / cardsPerPage);
+
+  useEffect(() => {
+  
+      setCurrentPage(1)
+      setSearchValue('')
+  }, [searchName]);
 
   // Función para cambiar a la página seleccionada
   const goToPage = (page) => {
@@ -62,10 +73,12 @@ const Cards = ({ data }) => {
       {selectedPokemon ? (
         <Detail pokemon={selectedPokemon} onBackClick={handleBackClick} />
       ) : (
-        <div className={styles.cardContainer}>
-          {currentCards.map((pokemon) => (
-            <Card key={pokemon.id} pkmn={pokemon} onClick={handleCardClick} />
-          ))}
+        <div>
+          <div className={styles.cardContainer}>
+            {currentCards.map((pokemon) => (
+              <Card key={pokemon.id} pkmn={pokemon} onClick={handleCardClick} />
+            ))}
+          </div>
           <div className={styles.paginationCenter}>
             <div className={styles.pagination}>
               <div className={styles.pagination}>

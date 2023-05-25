@@ -6,7 +6,8 @@ import {
   LOGOUT,
   SET_TYPE_FILTER,
   SET_SORT_ORDER,
-  SET_FILTER_TYPE_NONE
+  SET_FILTER_TYPE_NONE,
+  SET_SEARCH_VALUE
 } from "./action-types";
 
 
@@ -113,5 +114,15 @@ export const setSearchName = (searchName) => {
   } catch (error) {
     console.log(error);
   }
+  }
 }
-};
+
+export const setSearchValue = (searchName) =>{
+  return async (dispatch) =>{
+    dispatch({
+      type: SET_SEARCH_VALUE,
+      payload: searchName,
+    });
+  }
+
+}

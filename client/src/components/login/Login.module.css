@@ -1,0 +1,148 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px;
+    gap: 40px;
+    position: absolute;
+    width: 424px;
+    height: 420px;
+    left: calc(50% - 424px/2);
+    top: calc(50% - 560px/2);
+    background: #FFFFFF;
+    border-radius: 20px;
+    text-align: left;
+  }
+  
+  .titleText {
+    width: 304px;
+    height: 40px;
+    font-family: 'Avenir';
+    font-weight: 800;
+    font-size: 35px;
+    line-height: 40px;
+    color: #1F1F1F;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 24px;
+    width: 360px;
+    height: 496px;
+  }
+  
+  .formLabel {
+    width: 360px;
+    height: 16px;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 16px;
+    color: #A0A1A4;
+    margin-left: 0;
+  }
+  
+  .alignLeft {
+    text-align: left;
+  }
+  
+  .formInput {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 0px 0px 16px;
+    gap: 8px;
+    width: 360px;
+    height: 48px;
+    background: #FFFFFF;
+    border: 1px solid #C7C7C7;
+    border-radius: 12px;
+  }
+  
+  .formInput::placeholder {
+    width: 344px;
+    height: 24px;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .formButton {
+    font-family: 'Avenir';
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 16px;
+    width: 360px;
+    height: 56px;
+    background: #E8500E;
+    border-radius: 8px;
+  }
+  
+  .formButton span {
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+  }
+  
+  .errorScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    z-index: 9999;
+  }
+  
+  .errorScreen p {
+    margin: 40px;
+    font-size: 40px;
+  }
+  
+  .image {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background: url(../../assets/fondo1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .btn {
+    background: url(../../assets/Vector.svg) center/cover no-repeat;
+    position: absolute;
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    left: 30px;
+    top: 43px;
+    order: 0;
+  }
+  
+  .btn:hover {
+    cursor: pointer;
+  }
+  

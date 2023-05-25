@@ -23,8 +23,11 @@ const CreateUser = () => {
         [event.target.name]:event.target.value
     })
     setError(validate(form.email, form.password))
-
   };
+
+  const clearSuccess = () =>{
+    setSuccess('')
+  }
 
   const handleGoBack = (event) => {
     event.preventDefault();
@@ -33,6 +36,12 @@ const CreateUser = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if(form.name.length < 1 || form.surname.length < 1){
+      setSuccess('Faltan completar campos')
+    }
+    if(error){
+      setSuccess('Hay errores en el registro')
+    }
 
     if (Object.keys(error).length === 0) {
       try {
@@ -44,44 +53,97 @@ const CreateUser = () => {
           email: '',
           password: '',
         });
+        // return response
       } catch (error) {
         setSuccess('Error al crear el usuario');
+        // return error
       }
     }
   };
 
-
   return (
-    <div>
+    <div className={styles.image}>
       <div className={styles.container}>
-  <h1>Crear Nuevo Usuario</h1>
-  <form>
-  <label htmlFor="firstName">
-          Primer Nombre
-          <input type="text" name="name" value={form.name} onChange={handleChange} />
-        </label>
-        <label htmlFor="lastName">
-          Apellido:
-          <input type="text" name="surname" value={form.surname} onChange={handleChange}/>
-        </label>
-        <label htmlFor="email">
-          E-Mail:
-          <input type="text" name="email" value={form.email} onChange={handleChange} />
-        </label>
-        {error.email && <span>{error.email}</span>}
-        <label htmlFor="password">
-          Password:
-          <input type="password" name="password" value={form.password} onChange={handleChange} />
-        </label>
-        {error.password && <span>{error.password}</span>}
-        <button type="submit" onClick={handleSubmit}>Crear Usuario</button>
-  </form>
-  <button onClick={handleGoBack}>Atras</button>
-  {success && <span>{success}</span>}
-</div>
-
+        <div className={styles.title}>
+          <div onClick={handleGoBack} className={styles.btn}></div>
+          <h1 className={styles.titleText}>Registrate</h1>
+        </div>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="name" className={`${styles.formLabel} ${styles.alignLeft}`}>
+              Nombre
+              <input
+                type="text"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+                className={styles.formInput}
+                placeholder='Ej: Ash'
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="surname" className={`${styles.formLabel} ${styles.alignLeft}`}>
+              Apellido
+              <input
+                type="text"
+                name="surname"
+                value={form.surname}
+                onChange={handleChange}
+                className={styles.formInput}
+                placeholder='Ej: Ketchum'
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="email" className={`${styles.formLabel} ${styles.alignLeft}`}>
+              E-Mail
+              <input
+                type="text"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                className={styles.formInput}
+                placeholder='Ej: ashketchum@pokemon.com'
+              />
+            </label>
+            <div>
+              {error.email && <span>{error.email}</span>}
+            </div>
+          </div>
+          <div>
+            <label htmlFor="password" className={`${styles.formLabel} ${styles.alignLeft}`}>
+              Contraseña
+              <input
+                type="password"
+                name="password"
+                value={form.password}
+                onChange={handleChange}
+                className={styles.formInput}
+                placeholder='Contraseña'
+              />
+            </label>
+            <div>
+              {error.password && <span>{error.password}</span>}
+            </div>
+          </div>
+          <button type="submit" className={styles.formButton}>REGISTRARME</button>
+        </form>
+        {success && (
+          <div className={styles.errorScreen}>
+            <div>
+              <p>{success}</p>
+            </div>
+            <div>
+              <button className={styles.formButton} onClick={clearSuccess}>VOLVER</button>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
+  
+  
 };
 
 export default CreateUser;

@@ -133,12 +133,17 @@ gap: 8px;
 width: 275px;
 height: 48px;
 background: #FFFFFF;
-border: 1px solid #C7C7C7;
+/* border: 1px solid #C7C7C7; */
 border-radius: 12px;
 flex: none;
 order: 1;
 flex-grow: 1;
   }
+
+input{
+  border: none;
+}
+
   .container{
     display: flex;
     width: 800px;
@@ -189,8 +194,9 @@ font-size: 1.5rem;
     font-family: 'Avenir';
     font-style: normal;
     font-size: 20px;
+    border: none;
+    outline: none;
 }
-
 
 
 .selectContainer {

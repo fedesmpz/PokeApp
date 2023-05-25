@@ -1,14 +1,14 @@
 
 import { useSelector, useDispatch } from 'react-redux';
-import React, { useState } from 'react';
+import React from 'react';
 import {
   setTypeFilter,
   setSortOrder,
   setSearchName,
+  setSearchValue,
   logout
 } from '../../redux/actions';
 import { useNavigate } from 'react-router-dom'
-import PokemonForm from '../create/pokemon/PokemonForm';
 import styles from './NavBar.module.css'
 import { Link } from 'react-router-dom';
 
@@ -31,7 +31,9 @@ const NavBar = () => {
   const handleSearch = async (event) => {
     event.preventDefault();
     const searchName = event.target.elements.search.value;
+    dispatch(setSearchValue(searchName));
     dispatch(setSearchName(searchName));
+    event.target.elements.search.value = ''
   };
 
   const handleLogout = () => {  
@@ -69,7 +71,7 @@ const NavBar = () => {
                   <p>Buscar</p>
                 </div>
                 <form onSubmit={handleSearch} className={styles.searchInput}>
-                  <input type="text" name="search" className={styles.dataInput}/>
+                  <input type="text" name="search" className={styles.dataInput} placeholder='Ej: Pikachu'/>
                   <button className={styles.searchBtn} type="submit">🔎</button>
                 </form>
               </div>

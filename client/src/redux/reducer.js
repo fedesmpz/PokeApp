@@ -5,7 +5,8 @@ import {
     SET_SORT_ORDER,
     LOGOUT,
     SET_SEARCH_NAME,
-    SET_FILTER_TYPE_NONE
+    SET_FILTER_TYPE_NONE,
+    SET_SEARCH_VALUE
   } from "./action-types";
   
   const initialState = {
@@ -14,6 +15,7 @@ import {
     pokemonDetail: {},
     login: { access: false },
     tempData: [],
+    searchName: '',
   };
   
   const reducer = (state = initialState, { type, payload }) => {
@@ -48,6 +50,12 @@ import {
         return {
           ...state,
           pokemonData: payload,
+        };
+
+      case SET_SEARCH_VALUE:
+        return {
+          ...state,
+          searchName: payload,
         };
 
       case SET_FILTER_TYPE_NONE:
