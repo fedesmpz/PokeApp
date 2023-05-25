@@ -31,12 +31,9 @@
     left: -40px;
     top: 10px;
     order: 0;
-  }
-
-  .btn:hover{
     cursor: pointer;
   }
-  
+
   .titleContainer {
     box-sizing: border-box;
     width: 48px;

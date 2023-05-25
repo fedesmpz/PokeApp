@@ -5,7 +5,6 @@
     align-items: center;
     padding: 8px 24px;
     gap: 35px;
-    /* position: absolute; */
     width: 100%;
     height: 72px;
     left: 0px;
@@ -20,7 +19,7 @@
     background: url(../../assets/Logo.png);
     width: 200px;
     height: 78px;
-    background-size: contain; /* Ajusta el tamaño de la imagen para que quepa dentro del contenedor manteniendo la relación de aspecto */
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     flex: none;
@@ -29,25 +28,18 @@
 }
 
 .loginBtn{
-    display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 14px 16px;
-
-width: 142px;
-height: 48px;
-
-/* Primery */
-
-background: #E8500E;
-border-radius: 8px;
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 16px;
+  width: 142px;
+  height: 48px;
+  background: #E8500E;
+  border-radius: 8px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 }
 
 .loginBtn:hover {
@@ -57,30 +49,17 @@ flex-grow: 0;
   }
 
 .texto{
-
 height: 20px;
-
-/* GS Button */
-
 font-family: 'Avenir';
 font-style: normal;
 font-weight: 800;
 font-size: 14px;
 line-height: 20px;
-/* identical to box height, or 143% */
-
 display: flex;
 align-items: center;
 text-align: center;
 text-transform: uppercase;
-
-/* White */
-
 color: #FFFFFF;
-
-
-/* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
@@ -89,17 +68,15 @@ flex-grow: 0;
 .image {
     display: flex;
     flex-direction: column;
-    position: relative; /* Cambiamos a posicionamiento relativo */
+    position: relative; 
     width: 100%;
-    height: 100vh; /* Establece la altura al 100% de la ventana del navegador */
+    height: 100vh;
     left: 0;
     top: 0;
     background: url(../../assets/fondo1.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    /* background-position-y: -100; */
-    /* background-attachment: fixed; */
   }
 
   .loadingScreen {

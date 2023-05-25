@@ -11,6 +11,7 @@ import {
 import { useNavigate } from 'react-router-dom'
 import styles from './NavBar.module.css'
 import { Link } from 'react-router-dom';
+import types from '../validate/types'
 
 const NavBar = () => {
 
@@ -19,12 +20,12 @@ const NavBar = () => {
   const navigate = useNavigate();
 
 
-  const handleTypeFilterChange = async (event) => {  //funcional
+  const handleTypeFilterChange = async (event) => { 
     const type = event.target.value;
     await dispatch(setTypeFilter(type));
   };
 
-  const handleSortOrderChange = (event) => { //funcional
+  const handleSortOrderChange = (event) => { 
     dispatch(setSortOrder(event.target.value, pokemonData));
   };
 
@@ -40,14 +41,6 @@ const NavBar = () => {
     navigate('/')
     dispatch(logout());
   };
-
-  const types = [
-    'normal', 'fighting', 'flying', 'poison', 'ground', 'rock', 'bug', 'ghost',
-    'steel', 'water', 'grass', 'electric', 'psychic', 'ice', 'dragon', 'dark',
-    'fairy', 'unknown', 'shadow'
-  ];
-
-
 
 
   return (

@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom'
 import styles from './about.module.css'
@@ -28,6 +26,7 @@ const About = () => {
                             <img src={img} alt="" />
                         </div>
                         <div className={styles.dataContainer}>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis ut vero repellat dicta alias quia est accusantium? Asperiores temporibus corrupti vitae rerum aliquid assumenda quidem animi, dignissimos, sit, eveniet ullam?
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis ut vero repellat dicta alias quia est accusantium? Asperiores temporibus corrupti vitae rerum aliquid assumenda quidem animi, dignissimos, sit, eveniet ullam?
 
                             

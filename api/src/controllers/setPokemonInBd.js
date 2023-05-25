@@ -24,10 +24,10 @@ const setPokemonInBd = async (req, res) => {
       })
     );
 
-    const resolvedTypes = createdTypes
-      .filter((result) => result.status === 'fulfilled')
-      .map((result) => result.value[0]);
+    const resolvedTypes = createdTypes.filter((result) => result.status === 'fulfilled').map((result) => result.value[0]);
 
+
+    //relaciono el pokemon creado con el tipo
     await createdPokemon.setTypes(resolvedTypes);
 
     const pkmn = await Pokemon.findByPk(createdPokemon.id, { include: Type });

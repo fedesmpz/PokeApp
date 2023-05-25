@@ -55,7 +55,7 @@ const CreateUser = () => {
         });
         // return response
       } catch (error) {
-        setSuccess('Error al crear el usuario');
+        setSuccess('Error al crear el usuario'+ error.message);
         // return error
       }
     }

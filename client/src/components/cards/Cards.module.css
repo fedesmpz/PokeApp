@@ -1,4 +1,3 @@
-/* Header */
 
   .image {
     display: flex;
@@ -15,8 +14,6 @@
     
   }
   
-  
-  /* Card Container */
   .cardContainer {
 
     display: flex;
@@ -28,7 +25,6 @@
     max-height: calc(100vh - 72px - 30px);
   }
   
-  /* Pagination */
   .pagination {
     display: flex;
     flex-direction: row;

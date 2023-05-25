@@ -140,9 +140,5 @@
     left: 30px;
     top: 43px;
     order: 0;
-  }
-  
-  .btn:hover {
     cursor: pointer;
   }
-  

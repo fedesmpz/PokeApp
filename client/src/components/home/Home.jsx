@@ -10,6 +10,7 @@ const Home = () => {
   const pokemonData = useSelector((state) => state.pokemonData);
   const dataLoaded = useSelector((state) => state.dataLoaded);
   const access = useSelector((state => state.login.access))
+  
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

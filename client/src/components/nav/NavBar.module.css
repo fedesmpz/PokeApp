@@ -34,8 +34,8 @@
     font-size: 14px;
     line-height: 20px;
     color: #FFFFFF;
-    text-transform: uppercase; /* Agregado para convertir el texto en mayúsculas */
-    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    text-transform: uppercase; 
+    white-space: nowrap;
   }
 
 
@@ -95,8 +95,8 @@ flex-grow: 0;
     font-size: 14px;
     line-height: 20px;
     color: #E8500E;
-    text-transform: uppercase; /* Agregado para convertir el texto en mayúsculas */
-    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    text-transform: uppercase; 
+    white-space: nowrap;
   }
 
   .otherBtn:hover{
@@ -133,7 +133,6 @@ gap: 8px;
 width: 275px;
 height: 48px;
 background: #FFFFFF;
-/* border: 1px solid #C7C7C7; */
 border-radius: 12px;
 flex: none;
 order: 1;
@@ -223,5 +222,5 @@ font-size: 1.5rem;
     font-family: 'Avenir';
     font-style: normal;
     font-size: 20px;
-    appearance: none; /* Para quitar los estilos por defecto del select en algunos navegadores */
+    appearance: none; 
   }

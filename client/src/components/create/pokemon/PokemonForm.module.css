@@ -7,8 +7,6 @@
   background: url(../../../assets/fondo2.png) center/cover no-repeat;
 }
 
-
-
 .typeBtnContainer {
     display: flex;
     flex-wrap: wrap;
@@ -23,10 +21,9 @@
     border-radius: 4px;
     cursor: pointer;
     font-family: 'Avenir';
-/* font-style: normal; */
-font-size: 10px;
-text-transform: uppercase;
-color: #FFFFFF;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #FFFFFF;
 
   }
 
@@ -71,11 +68,9 @@ color: #FFFFFF;
   .fileAlign{
     display: flex;
     flex-direction: raw;
-    /* margin: 5px; */
   }
 
   .typeContainer{
-    /* display: inline-flex ; */
     width: 800px;
     margin: 10px;
   }
@@ -125,7 +120,6 @@ color: #FFFFFF;
 
   .titleText {
     width: 700px;
-    /* height: 40px; */
     font-family: 'Avenir';
     font-weight: 800;
     font-size: 35px;

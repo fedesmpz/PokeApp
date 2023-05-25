@@ -8,31 +8,29 @@ import {
 } from '../../redux/actions';
 
 const Cards = ({ data }) => {
-  const [currentPage, setCurrentPage] = useState(1);
+  
   const cardsPerPage = 12;
-  const [selectedPokemon, setSelectedPokemon] = useState(null);
   const searchName = useSelector((state) => state.searchName);
+  
+  const [currentPage, setCurrentPage] = useState(1);
+  const [selectedPokemon, setSelectedPokemon] = useState(null);
 
-  // Calcular el índice inicial y final de las tarjetas para la página actual
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
   const currentCards = data.slice(indexOfFirstCard, indexOfLastCard);
 
-  // Calcular el número total de páginas
   const totalPages = Math.ceil(data.length / cardsPerPage);
 
-  useEffect(() => {
-  
+  useEffect(() => {  
       setCurrentPage(1)
       setSearchValue('')
   }, [searchName]);
 
-  // Función para cambiar a la página seleccionada
+
   const goToPage = (page) => {
     setCurrentPage(page);
   };
 
-  // Generar los números de página como elementos de botón
   const pageNumbers = [];
   for (let i = 1; i <= totalPages; i++) {
     pageNumbers.push(
@@ -46,14 +44,13 @@ const Cards = ({ data }) => {
     );
   }
 
-  // Función para cambiar a la página siguiente
   const nextPage = () => {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
     }
   };
 
-  // Función para cambiar a la página anterior
+
   const prevPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);

@@ -75,42 +75,42 @@
     color: rgba(0, 0, 0, 0.6);
   }
   
-  .formButton {
-    font-family: 'Avenir';
-    color: #FFFFFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 18px 16px;
-    width: 360px;
-    height: 56px;
-    background: #E8500E;
-    border-radius: 8px;
-  }
-  
-  .formButton span {
-    font-family: 'Avenir';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 14px;
-    line-height: 20px;
-    color: #FFFFFF;
-  }
-  
-  .errorScreen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    z-index: 9999;
-  }
+    .formButton {
+      font-family: 'Avenir';
+      color: #FFFFFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 18px 16px;
+      width: 360px;
+      height: 56px;
+      background: #E8500E;
+      border-radius: 8px;
+    }
+    
+    .formButton span {
+      font-family: 'Avenir';
+      font-style: normal;
+      font-weight: 800;
+      font-size: 14px;
+      line-height: 20px;
+      color: #FFFFFF;
+    }
+    
+    .errorScreen {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      z-index: 9999;
+    }
   
   .errorScreen p {
     margin: 40px;

@@ -71,7 +71,7 @@ const getByTypesInBD = async (type) => {
 const setInBD = async (pkmn) => {
    
     const createdPokemon = await Pokemon.create({
-        name: pkmn.name ?? '',
+        name: pkmn.name,
         image: pkmn.image ?? '',
         hp: pkmn.hp ?? '',
         attack: pkmn.attack ?? '',
