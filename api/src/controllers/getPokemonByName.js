@@ -65,7 +65,7 @@ const getPokemonByName = async (req, res) => {
         try{
             const arrPkmnApi =[];
             let arrPkmnDB = [];
-            const { data } = await axios(`${URL}?limit=40`) //se sdeteo en 40 dado el tiempo que se demora en traer todos los pokemons
+            const { data } = await axios(`${URL}?limit=60`) //se sdeteo en 40 dado el tiempo que se demora en traer todos los pokemons
             const totalPkmns = data.results.length
             for (let i = 0; i < totalPkmns; i++) {
                 const {data} = await axios(`${URL}/${i+1}`)

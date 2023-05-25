@@ -2,24 +2,17 @@ require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_DEPLOY, DB_DEP } = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 
 const sequelize = new Sequelize(
    `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/pokemon`,
    {
-      logging: false,
-      native: false, 
+      logging: false, // set to console.log to see the raw SQL queries
+      native: false, // lets Sequelize know we can use pg-native for ~30% more speed
    }
-)
+);
 
-// const sequelize = new Sequelize(
-//    DB_DEP,
-//    {
-//       logging: false, 
-//       native: false, 
-//    }
-// );
-// const basename = path.basename(__filename);
+const basename = path.basename(__filename);
 
 const modelDefiners = [];
 
@@ -74,5 +67,5 @@ module.exports = {
 //ALTER SEQUENCE start_id_type RESTART WITH 1
 
 // CREATE SEQUENCE start_id_user START 1
-// ALTER TABLE pokemon ALTER COLUMN id SET DEFAULT nextval('start_id_user'); 
+// ALTER TABLE pokemon ALTER COLUMN id SET DEFAULT nextval('start_id'); 
 //ALTER SEQUENCE start_id_user RESTART WITH 1 
