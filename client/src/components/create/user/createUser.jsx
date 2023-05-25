@@ -26,6 +26,7 @@ const CreateUser = () => {
   };
 
   const clearSuccess = () =>{
+    if(success === 'Usuario creado exitosamente')navigate('/login')
     setSuccess('')
   }
 
