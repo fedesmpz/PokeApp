@@ -4,22 +4,22 @@ const fs = require('fs');
 const path = require('path');
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_DEPLOY, DB_DEP } = process.env;
 
-// const sequelize = new Sequelize(
-//    `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/pokemon`,
-//    {
-//       logging: false,
-//       native: false, 
-//    }
-// )
-
 const sequelize = new Sequelize(
-   DB_DEP,
+   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/pokemon`,
    {
-      logging: false, 
+      logging: false,
       native: false, 
    }
-);
-const basename = path.basename(__filename);
+)
+
+// const sequelize = new Sequelize(
+//    DB_DEP,
+//    {
+//       logging: false, 
+//       native: false, 
+//    }
+// );
+// const basename = path.basename(__filename);
 
 const modelDefiners = [];
 
