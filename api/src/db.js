@@ -2,13 +2,21 @@ require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
-const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_DEPLOY } = process.env;
+
+// const sequelize = new Sequelize(
+//    `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/pokemon`,
+//    {
+//       logging: false,
+//       native: false, 
+//    }
+// );postgresql://postgres:JmpkUIrfhPeldRLP5s51@containers-us-west-168.railway.app:7014/railway
 
 const sequelize = new Sequelize(
-   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/pokemon`,
+   `postgresql://postgres:JmpkUIrfhPeldRLP5s51@containers-us-west-168.railway.app:7014/railway`,
    {
-      logging: false, // set to console.log to see the raw SQL queries
-      native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+      logging: false, 
+      native: false, 
    }
 );
 const basename = path.basename(__filename);
@@ -60,3 +68,11 @@ module.exports = {
 // secuencia types start_id_type - 1
 // secuencia users start_id_user - 1
 // defaultValue: sequelize.literal("nextval('start_id')")
+
+// CREATE SEQUENCE start_id_type START 1
+// ALTER TABLE pokemon ALTER COLUMN id SET DEFAULT nextval('start_id_type'); 
+//ALTER SEQUENCE start_id_type RESTART WITH 1
+
+// CREATE SEQUENCE start_id_user START 1
+// ALTER TABLE pokemon ALTER COLUMN id SET DEFAULT nextval('start_id_user'); 
+//ALTER SEQUENCE start_id_user RESTART WITH 1 
