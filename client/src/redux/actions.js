@@ -88,6 +88,12 @@ export const setSortOrder = (sortOrder, list) => {
       case 'attackDesc':
         sortedList = [...list].sort((a, b) => b.attack - a.attack);
         break;
+      case 'hpAsc':
+        sortedList = [...list].sort((a, b) => b.hp - a.hp);
+        break;
+      case 'hpDesc':
+        sortedList = [...list].sort((a, b) => a.hp - b.hp);
+        break;
       default:
         sortedList = list;
         break;

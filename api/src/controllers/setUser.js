@@ -3,7 +3,8 @@ const bcrypt = require('bcrypt')
 
 const register = async (req, res) => {
 
-    const { name, surname, email, password } = req.body;
+    const { name, surname, password } = req.body;
+    const email = req.body.email.toLowerCase()
 
     const emailRegex = /^\S+@\S+\.\S+$/;
     const passNumber = /\d/

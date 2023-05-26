@@ -4,6 +4,7 @@ const { Router } = require('express');
 const pokemonRoutes = require('./PokemonRoute.js')
 const typeRoutes = require('./TypeRoute')
 const userRoutes = require('./UserRoute.js')
+const { getAllPkmnSetInBD } = require('../controllers/getAllPkmnSetInBD')
 
 
 const router = Router();
@@ -14,6 +15,8 @@ const router = Router();
 router.use('/', userRoutes);
 router.use('/pokemon', pokemonRoutes);
 router.use('/type', typeRoutes);
-
+router.get('/allpokemon', (req, res)=>{
+    getAllPkmnSetInBD(req, res)
+})
 
 module.exports = router;

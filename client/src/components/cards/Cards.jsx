@@ -82,7 +82,9 @@ const Cards = ({ data }) => {
                 <button className={styles.primary} onClick={prevPage} disabled={currentPage === 1}>
                   Anterior
                 </button>
-              <div className={styles.pageNumbers}>{pageNumbers}</div>
+                {/* <div className={styles.pageContainer}>
+                </div> */}
+                  <div className={styles.pageNumbers}>{pageNumbers}</div>
                 <button className={styles.primary} onClick={nextPage} disabled={currentPage === totalPages}>
                   Siguiente
                 </button>

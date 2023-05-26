@@ -5,14 +5,16 @@ const emailRegex = /^\S+@\S+\.\S+$/;
 
 const login = async (req, res) => {
 
-    const { email, password } = req.body;
+    const email = req.body.email.toLowerCase();
+    const password = req.body.password;
+
 
     if (!emailRegex.test(email)) {
         return res.status(400).json({ message: "El correo electrónico no es válido" });
     }
 
     try {
-
+      
         const user = await User.findOne({ where: { email } });
         if (!user) {
           return res.status(401).json({ message: 'Email o contraseña incorrectos' });

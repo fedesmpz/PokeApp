@@ -92,6 +92,8 @@ const NavBar = () => {
                   <option value="nameDesc">Nombre (Descendente)</option>
                   <option value="attackAsc">Ataque (Ascendente)</option>
                   <option value="attackDesc">Ataque (Descendente)</option>
+                  <option value="hpDesc">Vida (Ascendente)</option>
+                  <option value="hpAsc">Vida (Descendente)</option>
                 </select>
               </div>
               </div>
