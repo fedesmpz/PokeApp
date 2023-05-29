@@ -43,7 +43,7 @@ const Login = () => {
     const handleSubmit = async (event) =>{
         event.preventDefault()
         await dispatch(setLogin(form))
-        if(!access) setErrorLogin('Verifica tu usuario o la contraseña')
+        if(!access) setErrorLogin('Verifica tu usuario o contraseña')
         
     }
 
@@ -58,7 +58,7 @@ const Login = () => {
         <div className={styles.container}>
           <div className={styles.title}>
             <div onClick={handleGoBack} className={styles.btn}></div>
-            <h1 className={styles.titleText}>Registrate</h1>
+            <h1 className={styles.titleText}>Inicia Sesión</h1>
           </div>
           <form className={styles.form} onSubmit={handleSubmit}>
                 <div>

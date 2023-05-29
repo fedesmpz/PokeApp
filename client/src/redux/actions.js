@@ -13,6 +13,7 @@ import {
 
 export const logout = () => {
   return async (dispatch) =>{
+    localStorage.removeItem('token');
   dispatch({
     type: LOGOUT,
   });
@@ -28,6 +29,7 @@ export const setLogin = (form) => {
       const data = response.data;
 
       if (data.access === true) {
+        localStorage.setItem('token', data.token);
         dispatch({
           type: LOGIN,
           payload: data,
