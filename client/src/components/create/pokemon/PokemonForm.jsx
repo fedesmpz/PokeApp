@@ -83,7 +83,7 @@ const PokemonForm = () => {
       <div className={styles.container}>
         <div className={styles.title}>
           <div onClick={handleClose} className={styles.btn}></div>
-          <h1 className={styles.titleText}>Registrate</h1>
+          <h1 className={styles.titleText}>Crea tu Pokemon</h1>
         </div>
           <form>
             <div className={styles.fileAlign}>
